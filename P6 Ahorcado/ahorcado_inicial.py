@@ -59,9 +59,9 @@ adivinar = []
 palabra = []
 z = 0
 
-# Elige una palabra de forma aleatoria y calcula su longitud y la convierte en rusta
+# Elige una palabra de forma aleatoria y calcula su longitud y la convierte en lista
 def get_palabra_secreta():
-      palabras = ["casa"] #,"coche","tomate","lechuga"
+      palabras = ["casa","coche","tomate","lechuga"]
       x = random.choice(palabras)
       y = len(x)
       palabra = list(x)
@@ -81,11 +81,11 @@ def guiones(z,y):
 guiones(z,y)
 
 # Mientras que el contador sea menor que 6 se hace todo
-while (cont <= 6):
+while (cont < 6):
 
       print_horca(cont)
 
-      letra_usuario = str(input("Introduce una letra para adivinar: "))
+      letra_usuario = str(input("Introduce una letra para adivinar: ")) # Pide una letra al jugador
       pos=0
       for letra in palabra: #Por cada letra en la palabra secreta, comprueba que si la letra del usuario es la letra de la palabra secreta
             if letra_usuario == letra:
@@ -97,8 +97,15 @@ while (cont <= 6):
       
       if adivinar == palabra:
             print("Has ganado!")
+            print(f"La palabra era {x}")
             break
-
+      
       print(adivinar)
+      
+      if cont == 6:
+            print_horca(cont)
+            print("Has perdido")
+            print(f"El resultado que has tenido es {adivinar} y la palabra era {x}")
+
 
 
