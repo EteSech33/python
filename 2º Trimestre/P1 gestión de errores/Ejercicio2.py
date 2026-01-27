@@ -4,5 +4,9 @@ edades = {
     "Luis": 28
 }
 
-nombre = input("Introduce un nombre para obtener la edad: ")
-print(f"La edad de {nombre} es: {edades[nombre]}")
+while True:
+    try:
+        nombre = input("Introduce un nombre para obtener la edad: ")
+        print(f"La edad de {nombre} es: {edades[nombre]}")
+    except KeyError:
+        print("Has introducido un nombre no válido.")
